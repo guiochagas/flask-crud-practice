@@ -6,7 +6,6 @@
     action="{{ url_for('cliente.inserir_cliente') }}" 
   {% endif%}
 
-
   method="{% if cliente %}PUT{% else %}POST{% endif %}" 
 
   {% if cliente %}
@@ -15,6 +14,8 @@
     c-append="#lista_clientes"
   {% endif %}
 
+  c-reload-container="true"
+  
   >
   
 
