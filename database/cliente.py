@@ -3,5 +3,5 @@ CLIENTES = [
     {"id": 2, "nome": "Sarah", "email": "sarah@chagas.com"},
     {"id": 3, "nome": "Alana", "email": "alana@chagas.com"},
     {"id": 4, "nome": "Liam", "email": "liam@chagas.com"},
-    {"id": 5, "nome": "Anelise", "email": "anelise@chagas.com"},
+    {"id": 5, "nome": "Anelize", "email": "anelise@chagas.com"},
 ]
