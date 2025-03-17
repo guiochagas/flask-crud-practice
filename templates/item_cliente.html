@@ -4,20 +4,20 @@
     <td>{{ cliente.email }}</td>
     <td>
 
-        <button class="btn btn-secondary" 
+        <button class="btn btn-secondary mb-1" 
             c-get="{{ url_for('cliente.detalhe_cliente', cliente_id=cliente.id) }}"
             c-target="#exibir_cliente"
             data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Ver
         </button>
 
-        <button class="btn btn-primary" 
+        <button class="btn btn-primary mb-1" 
             c-get="{{ url_for('cliente.form_edit_cliente', cliente_id=cliente.id) }}"
             c-target="#form_cliente">
                 Editar
         </button>
 
-        <button class="btn btn-danger" 
+        <button class="btn btn-danger mb-1" 
             c-delete="{{ url_for('cliente.deletar_cliente', cliente_id=cliente.id) }}"
             c-remove-closest="tr">
                 Deletar
