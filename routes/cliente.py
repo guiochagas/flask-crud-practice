@@ -24,7 +24,7 @@ def inserir_cliente():
         email = data['email']
     )
 
-    return render_template('item_cliente.html', cliente=novo_usuario)
+    return render_template('item_cliente.html', cliente=novo_usuario), {"status": "cliente adicionado com sucesso!"}
     
 
 @cliente_route.route('/new')
@@ -69,10 +69,13 @@ def atualizar_cliente(cliente_id):
 
 
 @cliente_route.route('/<int:cliente_id>/delete', methods=['DELETE'])
-def deletar_cliente(cliente_id):
+def deletar_cliente(cliente_id):    
     """deletar informações de um cliente"""
+    try:
+        cliente = Cliente.get_by_id(cliente_id)
+        cliente.delete_instance()
 
-    cliente = Cliente.get_by_id(cliente_id)
-    cliente.delete_instance()
+        return {'status-delete': 'cliente deletado com sucesso!'}
 
-    return {'deleted': 'ok'}
+    except Exception:
+        return {'erro': 'cliente_id não encontrado na lista.'}
