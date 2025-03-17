@@ -4,6 +4,7 @@ from database.models.cliente import Cliente
 
 cliente_route = Blueprint('cliente', __name__)
 
+
 @cliente_route.route('/')
 def lista_clientes():
     """listar os clientes"""
